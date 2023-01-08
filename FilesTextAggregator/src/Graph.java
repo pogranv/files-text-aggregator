@@ -26,6 +26,16 @@ public class Graph<T> {
     }
 
     /**
+     * Добавляет вершину в граф.
+     * @param node Вершина, которую нужно добавить в граф.
+     */
+    public void addNode(T node) {
+        if (!graph.containsKey(node)) {
+            graph.put(node, new ArrayList<>());
+        }
+    }
+
+    /**
      * Добавляет ребро в граф.
      * @param from Откуда идет ребро.
      * @param to Куда идет ребро.

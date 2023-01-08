@@ -41,6 +41,7 @@ public class FilesDependeceBuilder {
     private Graph<String> buildFilesGraph(ArrayList<String> files) throws RequiredFileNotExistException {
         var fileGraph = new Graph<String>();
         for (var file : files) {
+            fileGraph.addNode(file);
             try (BufferedReader br = new BufferedReader(new FileReader(file))) {
                 String line;
                 while ((line = br.readLine()) != null) {
